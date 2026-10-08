@@ -1,0 +1,34 @@
+class Projekt:
+    def __init__(self, produkt, price, stock):
+        self.produkt = produkt
+        self.price = price
+        self.stock = stock
+
+    def sell(self):
+        if self.stock > 0:
+            self.stock -= 1
+        else:
+            print("Produkt is out of stock")
+
+
+
+    def restock(self, amount):
+        self.stock += amount
+
+    def show_info(self):
+        print("Produkt:", self.produkt)
+        print("Price:", self.price)
+        print("Stock:", self.stock)
+
+produkt1 = Projekt("Keyboard", "329" + "kr", 12)
+produkt2 = Projekt("Computer", "14600" + "kr", 3)
+
+produkt1.sell()
+produkt1.sell()
+
+produkt2.sell()
+produkt2.restock(0)
+
+produkt1.show_info()
+print()
+produkt2.show_info()
